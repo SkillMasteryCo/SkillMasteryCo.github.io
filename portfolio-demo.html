@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillMasteryCo Single-File Portfolio Demo</title>
+    <link rel="icon" href="skillmaterco_logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="skillmaterco_logo.png">
     <style>
         :root {
             color-scheme: dark;
@@ -229,11 +231,29 @@
             border-radius: 1rem;
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.06);
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeUp 0.45s ease forwards;
         }
 
         .list-item span {
             font-size: .9rem;
             color: var(--muted);
+        }
+
+        .list-item strong {
+            color: #fff;
+            font-size: 1.02rem;
+        }
+
+        .pulse {
+            animation: pulseGlow 0.9s ease;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(143,120,255,0.24); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 18px rgba(143,120,255,0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(143,120,255,0); }
         }
 
         .list-item strong {
@@ -403,6 +423,7 @@
             }
         ];
 
+        const metrics = document.querySelectorAll('.metric-card');
         const tabs = document.querySelectorAll('.tab');
         const titleEl = document.querySelector('.project-title');
         const descEl = document.querySelector('.project-description');
@@ -413,9 +434,18 @@
             const project = projectData[index];
             titleEl.textContent = project.title;
             descEl.textContent = project.description;
-            listEl.innerHTML = project.features.map(feature => {
-                return `<div class="list-item"><span>${feature.label}</span><strong>${feature.value}</strong></div>`;
+            listEl.innerHTML = project.features.map((feature, idx) => {
+                return `<div class="list-item" style="animation-delay:${idx * 70}ms"><span>${feature.label}</span><strong>${feature.value}</strong></div>`;
             }).join('');
+            pulseMetrics(index);
+        }
+
+        function pulseMetrics(index) {
+            metrics.forEach((card, idx) => {
+                card.classList.remove('pulse');
+                void card.offsetWidth;
+                if (idx === index) card.classList.add('pulse');
+            });
         }
 
         tabs.forEach((tab, index) => {

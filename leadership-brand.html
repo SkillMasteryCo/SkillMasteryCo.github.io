@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="pLy8rSuHSiTuV5atNPAr-OQkLkQ8y7j-v8F_Pm94lY0" />
     <title>Leadership Brand Demo | SkillMasterCo</title>
     <link rel="icon" href="skillmaterco_logo.png" type="image/png">
     <style>
@@ -37,6 +38,7 @@
         .leader-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:2rem;}
         .card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:1.3rem;padding:1.5rem;transition:transform var(--transition),border-color var(--transition);cursor:pointer;}
         .card:hover{transform:translateY(-6px);border-color:rgba(56,189,248,0.34);}
+        .card.active{background:rgba(56,189,248,0.12);border-color:rgba(56,189,248,0.55);box-shadow:0 24px 45px rgba(56,189,248,0.16);}
         .card h3{margin:0 0 .75rem;}
         .card p{margin:0;color:var(--muted);}
         .insight{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
@@ -109,7 +111,23 @@
             Executive:{copy:'An executive presence requires trust, detail, and a premium finish. This layout makes the brand feel safe, sophisticated, and decisive.',trait:'Authority, credibility, and strategic clarity.'},
             'Growth Lead':{copy:'For fast-moving growth brands, the page balances momentum with credibility, so leaders feel both ambitious and organized.',trait:'Momentum, structure, and persuasive precision.'}
         };
-        cards.forEach(card=>card.addEventListener('click',()=>{cards.forEach(c=>c.classList.remove('active'));card.classList.add('active');const role = card.dataset.role; insightCopy.textContent = details[role].copy; traitCopy.textContent = details[role].trait;}));
+        const visualTitle = document.querySelector('.visual h2');
+        const visualBody = document.querySelector('.visual p');
+        const visualDetails = {
+            Founder: {
+                title: 'Founder storytelling',
+                copy: 'This layout creates a direct leadership voice while keeping the path to action clear for clients.'
+            },
+            Executive: {
+                title: 'Executive clarity',
+                copy: 'A strong executive page makes every section feel intentional, authoritative, and calm.'
+            },
+            'Growth Lead': {
+                title: 'Growth momentum',
+                copy: 'The page feels fast-moving but grounded, giving leaders confidence in every decision point.'
+            }
+        };
+        cards.forEach(card=>card.addEventListener('click',()=>{cards.forEach(c=>c.classList.remove('active'));card.classList.add('active');const role = card.dataset.role; insightCopy.textContent = details[role].copy; traitCopy.textContent = details[role].trait; visualTitle.textContent = visualDetails[role].title; visualBody.textContent = visualDetails[role].copy;}));
         cards[0].click();
     </script>
 </body>
