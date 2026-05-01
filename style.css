@@ -3,15 +3,19 @@
    =========================== */
 :root {
     /* Colors */
-    --primary-color: #6c63ff;
-    --primary-dark: #4f47d8;
-    --secondary-color: #3b3b6d;
-    --accent-color: #ff6b8a;
-    --text-dark: #e2e8f0;
-    --text-light: #a0aec0;
-    --bg-light: #1a202c;
-    --bg-white: #0f172a;
-    --border-color: #2d3748;
+    --primary-color: #7c5cff;
+    --primary-dark: #5a44ff;
+    --secondary-color: #3e54ff;
+    --accent-color: #4ad5ff;
+    --accent-primary: #7c5cff;
+    --text-dark: #eef2ff;
+    --text-light: #9fb3cf;
+    --bg-light: #090d1a;
+    --bg-white: #0d1423;
+    --border-color: rgba(255,255,255,0.08);
+    --surface: rgba(10, 18, 30, 0.95);
+    --surface-soft: rgba(15, 23, 42, 0.92);
+    --surface-strong: rgba(7, 12, 23, 0.98);
     --success-color: #48bb78;
     --error-color: #f56565;
 
@@ -248,8 +252,9 @@ button {
 .hero {
     margin-top: 80px;
     min-height: calc(100vh - 80px);
-    background: radial-gradient(circle at top, rgba(108, 99, 255, 0.22), transparent 30%),
-                linear-gradient(135deg, #0b1122 0%, #111827 100%);
+    background: radial-gradient(circle at top, rgba(124, 92, 255, 0.18), transparent 28%),
+                radial-gradient(circle at bottom right, rgba(74, 213, 255, 0.1), transparent 22%),
+                linear-gradient(135deg, #070b1a 0%, #101828 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -258,6 +263,22 @@ button {
     padding: var(--spacing-2xl) var(--spacing-md);
     position: relative;
     overflow: hidden;
+}
+
+.hero-content {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cta-button {
+    width: auto;
+    min-width: 220px;
+}
+
+.hero-subtitle,
+.hero-note {
+    max-width: 640px;
 }
 
 .hero::before {
@@ -709,7 +730,7 @@ button {
     }
 
     .hero-title {
-        font-size: 1.75rem;
+        font-size: 1.9rem;
     }
 
     .hero-subtitle {
@@ -717,6 +738,8 @@ button {
     }
 
     .cta-button {
+        width: 100%;
+        min-width: auto;
         padding: var(--spacing-md) var(--spacing-lg);
         font-size: var(--font-size-base);
     }
@@ -757,6 +780,22 @@ button {
 
     .footer {
         padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .nav-container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero-subtitle,
+    .hero-note {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .portfolio-card,
+    .service-card,
+    .contact-form {
+        border-radius: calc(var(--radius-xl) * 1.1);
     }
 
     .footer p {
