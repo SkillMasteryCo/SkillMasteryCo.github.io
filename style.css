@@ -747,6 +747,10 @@ button {
         font-size: var(--font-size-xl);
     }
 
+    .logo span {
+        font-size: 1.4rem;
+    }
+
     .hero {
         margin-top: 70px;
         min-height: calc(100vh - 70px);
