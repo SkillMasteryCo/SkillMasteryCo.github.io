@@ -692,6 +692,20 @@ button {
         margin-bottom: 0;
     }
 
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero {
+        padding: var(--spacing-xl) var(--spacing-md);
+        min-height: auto;
+    }
+
+    .hero-title,
+    .section-title {
+        text-align: center;
+    }
+
     /* Services Grid */
     .services-grid {
         flex-direction: column;
@@ -704,6 +718,16 @@ button {
     /* Contact Form */
     .contact-form {
         padding: var(--spacing-lg);
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+
+    .social-links {
+        justify-content: center;
     }
 
     .section-title {

@@ -25,6 +25,20 @@
         html, body { margin:0; min-height:100%; background: radial-gradient(circle at top left, rgba(139,92,246,0.2), transparent 25%), radial-gradient(circle at bottom right, rgba(244,63,94,0.14), transparent 20%), #070c17; }
         body { display:flex; justify-content:center; padding:2rem; }
         .page { width:min(1100px,100%); }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            transition: color var(--transition);
+        }
+
+        .back-button:hover {
+            color: #eef2ff;
+        }
         .hero { background: var(--surface); border:1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow:hidden; }
         .hero-header { display:grid; grid-template-columns: 1fr 1fr; gap:2rem; padding:3rem; }
         .hero-tag { text-transform: uppercase; letter-spacing:.3em; color: var(--muted); font-size:.83rem; margin-bottom:1rem; }
@@ -62,7 +76,55 @@
         .case-body { opacity:0; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease; }
         .case-body.visible { opacity:1; transform: translateY(0); }
         @keyframes fadeUp { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: translateY(0); } }
-        @media (max-width: 900px) { .hero-header { grid-template-columns:1fr; } }
+        @media (max-width: 900px) {
+            .hero-header {
+                grid-template-columns:1fr;
+            }
+
+            body {
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 2rem 1.2rem;
+            }
+
+            .page {
+                width: 100%;
+            }
+
+            .features,
+            .case-study {
+                padding: 0 1rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-cta {
+                display: grid;
+                gap: 1rem;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .hero-side {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                width: 100%;
+            }
+
+            .case-tabs {
+                grid-template-columns: 1fr;
+            }
+
+            .case-body {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -70,6 +132,13 @@
         <section class="hero">
             <div class="hero-header">
                 <div>
+                    <a href="index.html" class="back-button">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                        </svg>
+                        Back to Home
+                    </a>
+                    <br>
                     <span class="hero-tag">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem;">
                             <path d="M20 6h-3V4c0-1.11-.89-2-2-2H9c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM9 4h6v2H9V4zm11 15H4V8h16v11z"/>
