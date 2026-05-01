@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Brand Demo | SkillMasterCo</title>
+    <link rel="icon" href="skillmaterco_logo.png" type="image/png">
+    <style>
+        :root {
+            color-scheme: dark;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #050914;
+            color: #f8fafc;
+            --surface: rgba(10, 20, 40, 0.96);
+            --accent: #38bdf8;
+            --accent-soft: rgba(56,189,248,0.16);
+            --muted: #94a3b8;
+            --border: rgba(255,255,255,0.08);
+            --radius: 1.25rem;
+            --shadow: 0 24px 60px rgba(0,0,0,.42);
+            --transition: 0.28s ease;
+        }
+        *{box-sizing:border-box;}
+        html,body{margin:0;min-height:100%;background:radial-gradient(circle at top left, rgba(56,189,248,0.14), transparent 20%),#050914;}
+        body{display:flex;justify-content:center;padding:2rem;}
+        .wrapper{width:min(1100px,100%);}
+        .hero{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:3rem;position:relative;overflow:hidden;}
+        .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 15%, rgba(56,189,248,0.12), transparent 18%);pointer-events:none;}
+        .top{display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:start;}
+        .tag{font-size:.8rem;text-transform:uppercase;letter-spacing:.22em;color:var(--muted);margin-bottom:1rem;}
+        h1{font-size:clamp(2.4rem,4vw,3.8rem);margin:0;line-height:1;}
+        p{color:var(--muted);line-height:1.8;margin:1.5rem 0;}
+        .pill{display:inline-flex;gap:.75rem;flex-wrap:wrap;}
+        .pill span{background:rgba(56,189,248,0.12);color:#dbeafe;padding:.8rem 1rem;border-radius:999px;font-size:.95rem;}
+        .visual{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:1.5rem;padding:1.5rem;}
+        .visual h2{margin:.5rem 0 1rem;color:#fff;}
+        .leader-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-top:2rem;}
+        .card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:1.3rem;padding:1.5rem;transition:transform var(--transition),border-color var(--transition);cursor:pointer;}
+        .card:hover{transform:translateY(-6px);border-color:rgba(56,189,248,0.34);}
+        .card h3{margin:0 0 .75rem;}
+        .card p{margin:0;color:var(--muted);}
+        .insight{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+        .insight panel{display:block;}
+        .panel{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:1.3rem;padding:1.75rem;}
+        .panel h3{margin:0 0 1rem;}
+        .panel p{color:var(--muted);line-height:1.8;margin:0;}
+        .slider{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1rem;}
+        .slider button{padding:1rem 1.1rem;border-radius:1rem;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--muted);cursor:pointer;transition:background var(--transition),color var(--transition);}
+        .slider button.active{background: linear-gradient(135deg, rgba(56,189,248,0.18), rgba(96,165,250,0.16));color:#eef2ff;border-color:rgba(56,189,248,0.32);}
+        .brand-summary{margin-top:2rem;padding:1.6rem;border-radius:1.3rem;border:1px solid var(--border);background:rgba(255,255,255,.03);}
+        .brand-summary strong{display:block;margin-bottom:.8rem;color:#eef2ff;}
+        .footer{margin-top:1.5rem;color:var(--muted);text-align:center;}
+        @media(max-width:900px){.top{grid-template-columns:1fr;} }
+        @media(max-width:600px){.slider{grid-template-columns:1fr;}}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <section class="hero">
+            <div class="top">
+                <div>
+                    <span class="tag">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem;">
+                            <path d="M5 16L3 5c0-.55.45-1 1-1h16c.55 0 1 .45 1 1l-2 11H5zm14-7c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1v1h4v-1zM7 7c0-.55.45-1 1-1h2c.55 0 1 .45 1 1v1H7V7z"/>
+                        </svg>
+                        Leadership Brand
+                    </span>
+                    <h1>Build a leadership presence that feels unmistakably executive.</h1>
+                    <p>This demo reveals how a leadership page can convey clarity, authority, and empathy. It’s ideal for founders, CEOs, and teams that need more than a brochure — they need a commanding digital brand.</p>
+                    <div class="pill">
+                        <span>Executive tone</span>
+                        <span>Premium narrative</span>
+                        <span>High trust</span>
+                    </div>
+                </div>
+                <div class="visual">
+                    <h2>Brand impact</h2>
+                    <p>Every section is designed to reassure senior stakeholders and create a sense of credible momentum.</p>
+                </div>
+            </div>
+            <div class="leader-grid">
+                <div class="card" data-role="Founder"><h3>Founder-centric</h3><p>Clarity of mission and direct business value for executive founders.</p></div>
+                <div class="card" data-role="Executive"><h3>Executive presence</h3><p>Polished messaging that resonates with investors and decision-makers.</p></div>
+                <div class="card" data-role="Growth Lead"><h3>Growth leader</h3><p>Confident storytelling to support scaling teams and growth initiatives.</p></div>
+            </div>
+            <div class="insight">
+                <div class="panel">
+                    <h3>Brand narrative</h3>
+                    <p id="insightCopy">Select a leadership type to see tailored messaging that emphasizes authority and partnership.</p>
+                </div>
+                <div class="panel">
+                    <h3>Identity traits</h3>
+                    <p id="traitCopy">A strong leadership brand combines sharp visuals, consistent voice, and clear positioning.</p>
+                </div>
+            </div>
+            <div class="brand-summary">
+                <strong>Single-file showcase</strong>
+                <p>This page demonstrates how a dynamic leadership brand experience can be built without a framework, while still feeling premium and modern for high-end clients.</p>
+            </div>
+        </section>
+        <p class="footer">A unique executive presentation that proves a page can do more than inform — it can inspire partnership.</p>
+    </div>
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const insightCopy = document.getElementById('insightCopy');
+        const traitCopy = document.getElementById('traitCopy');
+        const details = {
+            Founder:{copy:'A founder brand should feel visionary yet grounded in business outcomes. Here, the page signals leadership with precision and warmth.',trait:'Vision, clarity, and direct market confidence.'},
+            Executive:{copy:'An executive presence requires trust, detail, and a premium finish. This layout makes the brand feel safe, sophisticated, and decisive.',trait:'Authority, credibility, and strategic clarity.'},
+            'Growth Lead':{copy:'For fast-moving growth brands, the page balances momentum with credibility, so leaders feel both ambitious and organized.',trait:'Momentum, structure, and persuasive precision.'}
+        };
+        cards.forEach(card=>card.addEventListener('click',()=>{cards.forEach(c=>c.classList.remove('active'));card.classList.add('active');const role = card.dataset.role; insightCopy.textContent = details[role].copy; traitCopy.textContent = details[role].trait;}));
+        cards[0].click();
+    </script>
+</body>
+</html>

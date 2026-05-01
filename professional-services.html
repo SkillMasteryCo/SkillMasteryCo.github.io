@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Services Demo | SkillMasterCo</title>
+    <link rel="icon" href="skillmaterco_logo.png" type="image/png">
+    <style>
+        :root {
+            color-scheme: dark;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #070c17;
+            color: #eef2ff;
+            --surface: rgba(16, 24, 40, 0.95);
+            --surface-soft: rgba(30, 41, 59, 0.95);
+            --accent: #8b5cf6;
+            --accent-strong: #f43f5e;
+            --border: rgba(255,255,255,0.08);
+            --muted: #94a3b8;
+            --radius: 1.2rem;
+            --shadow: 0 26px 70px rgba(0,0,0,.45);
+            --transition: 0.25s ease;
+        }
+        * { box-sizing: border-box; }
+        html, body { margin:0; min-height:100%; background: radial-gradient(circle at top left, rgba(139,92,246,0.2), transparent 25%), radial-gradient(circle at bottom right, rgba(244,63,94,0.14), transparent 20%), #070c17; }
+        body { display:flex; justify-content:center; padding:2rem; }
+        .page { width:min(1100px,100%); }
+        .hero { background: var(--surface); border:1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow:hidden; }
+        .hero-header { display:grid; grid-template-columns: 1fr 1fr; gap:2rem; padding:3rem; }
+        .hero-tag { text-transform: uppercase; letter-spacing:.3em; color: var(--muted); font-size:.83rem; margin-bottom:1rem; }
+        h1 { font-size: clamp(2.4rem, 4vw, 3.8rem); margin:0; line-height:1; }
+        p { color: var(--muted); font-size:1.02rem; line-height:1.8; margin:1.5rem 0; }
+        .hero-cta { display:inline-flex; gap:1rem; flex-wrap:wrap; }
+        .button { padding:1rem 1.6rem; border-radius:999px; border:1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.05); color:#eef2ff; font-weight:700; cursor:pointer; transition: transform var(--transition), background var(--transition), border-color var(--transition); }
+        .button:hover { transform: translateY(-3px); background: rgba(139,92,246,0.18); border-color: rgba(139,92,246,0.5); }
+        .button.primary { background: linear-gradient(135deg, rgba(139,92,246,0.95), rgba(244,63,94,0.95)); border-color: transparent; }
+        .hero-side { display:grid; gap:1rem; }
+        .stat { padding:1.5rem; border-radius:1.2rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }
+        .stat p { margin:0; color: var(--muted); }
+        .stat strong { display:block; font-size:1.8rem; margin-top:.5rem; }
+        .features { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:1.25rem; padding: 0 3rem 3rem; }
+        .feature { background: var(--surface-soft); border:1px solid var(--border); border-radius: var(--radius); padding:1.5rem; transition: transform var(--transition), border-color var(--transition); }
+        .feature:hover { transform: translateY(-6px); border-color: rgba(139,92,246,0.35); }
+        .feature h3 { margin:0 0 .75rem; }
+        .feature p { margin:0; color: var(--muted); }
+        .case-study { padding: 0 3rem 3rem; }
+        .case-tabs { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:1rem; margin-bottom:1.5rem; }
+        .case-tab { padding:1rem 1.2rem; background: rgba(255,255,255,.04); border:1px solid var(--border); border-radius:1rem; cursor:pointer; color: var(--muted); transition: background var(--transition), color var(--transition); }
+        .case-tab.active { background: linear-gradient(135deg, rgba(139,92,246,0.18), rgba(244,63,94,0.16)); color:#eef2ff; }
+        .case-body { background: rgba(15,23,42,.98); border:1px solid var(--border); border-radius:1.2rem; padding:2rem; }
+        .case-title { margin:0 0 1rem; font-size:1.6rem; }
+        .case-description { color: var(--muted); line-height:1.8; margin-bottom:1.5rem; }
+        .list { display:grid; gap:1rem; }
+        .list-item { padding:1rem 1.2rem; border-radius:1rem; background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.05); }
+        .list-item strong { display:block; margin-bottom:.35rem; }
+        .footer { margin-top:1.5rem; color: var(--muted); text-align:center; }
+        @media (max-width: 900px) { .hero-header { grid-template-columns:1fr; } }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <section class="hero">
+            <div class="hero-header">
+                <div>
+                    <span class="hero-tag">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 0.5rem;">
+                            <path d="M20 6h-3V4c0-1.11-.89-2-2-2H9c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zM9 4h6v2H9V4zm11 15H4V8h16v11z"/>
+                        </svg>
+                        Professional Services
+                    </span>
+                    <h1>Convert trust into long-term client relationships.</h1>
+                    <p>This demo shows how a modern services page elevates expertise, builds momentum, and turns every visitor into a business opportunity. It’s designed to feel premium, confident, and clear.</p>
+                    <div class="hero-cta">
+                        <button class="button primary" data-case="1">View Strategy</button>
+                        <button class="button" data-case="2">See Growth</button>
+                    </div>
+                </div>
+                <div class="hero-side">
+                    <div class="stat"><p>Booking increase</p><strong>+62%</strong></div>
+                    <div class="stat"><p>Client trust score</p><strong>9.8 / 10</strong></div>
+                    <div class="stat"><p>Consultation lift</p><strong>+48%</strong></div>
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature"><h3>Clear service hierarchy</h3><p>Audiences instantly understand which offering matches their needs.</p></div>
+                <div class="feature"><h3>High-impact credibility</h3><p>Social proof, results, and process are surfaced thoughtfully on one page.</p></div>
+                <div class="feature"><h3>Conversion gradient</h3><p>A visual journey that naturally leads contacts toward the next step.</p></div>
+            </div>
+            <div class="case-study">
+                <div class="case-tabs">
+                    <button class="case-tab active" data-index="0">Strategy</button>
+                    <button class="case-tab" data-index="1">Conversion</button>
+                    <button class="case-tab" data-index="2">Outcome</button>
+                </div>
+                <div class="case-body">
+                    <h2 class="case-title">Bespoke client engagement systems</h2>
+                    <p class="case-description">A high-end service page should communicate your process clearly, show results confidently, and make it easy for clients to say yes.</p>
+                    <div class="list" id="caseList"></div>
+                </div>
+            </div>
+        </section>
+        <p class="footer">A single-file demo that proves a professional services website can deliver value, trust, and measurable growth.</p>
+    </div>
+    <script>
+        const cases = [
+            { title:'Strategy','description':'Build a framework that leads prospects through trust, understanding, and action.', points:[{title:'Audience clarity','text':'Speak directly to the exact businesses you want to serve.'},{title:'Service positioning','text':'Show why your approach is the most logical choice.'},{title:'Brand authority','text':'Project confidence through design and messaging.'}]},
+            { title:'Conversion','description':'Create visual momentum so visitors move from interest to response.', points:[{title:'Directional cues','text':'Use hierarchy and motion to guide attention.'},{title:'Focused CTAs','text':'Remove friction with simple, action-oriented prompts.'},{title:'Social proof','text':'Show results and testimonials where they matter most.'}]},
+            { title:'Outcome','description':'Turn the website into a core growth asset for your business.', points:[{title:'Higher-value leads','text':'Attract prospects who are ready to invest.'},{title:'Faster decision cycles','text':'Give decision-makers clarity and confidence instantly.'},{title:'Repeat engagement','text':'Design for trust and long-term relationship building.'}]}
+        ];
+        const tabs = document.querySelectorAll('.case-tab');
+        const caseList = document.getElementById('caseList');
+        const caseTitle = document.querySelector('.case-title');
+        const caseDesc = document.querySelector('.case-description');
+        const buttons = document.querySelectorAll('[data-case]');
+        function renderCase(index){
+            const item = cases[index];
+            caseTitle.textContent = item.title;
+            caseDesc.textContent = item.description;
+            caseList.innerHTML = item.points.map(point => `<div class="list-item"><strong>${point.title}</strong><span>${point.text}</span></div>`).join('');
+        }
+        tabs.forEach((tab,i)=> tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));tab.classList.add('active');renderCase(i);}));
+        buttons.forEach(button => button.addEventListener('click',()=>{const index = button.dataset.case === '1' ? 0 : 2; tabs[index].click(); document.querySelector('.hero').scrollIntoView({behavior:'smooth'});}));
+        renderCase(0);
+    </script>
+</body>
+</html>
