@@ -1,1 +1,1 @@
-# SkillMasterCo.github.io
+# SkillMasteryCo.github.io
